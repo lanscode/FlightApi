@@ -1,6 +1,5 @@
 package com.koria.api.reservation.models;
 
-import java.util.Collection;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -9,10 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-import lombok.ToString;
 
 @Entity
-@ToString(of= {"firstName","lastName","email"})
 public class User extends AbstractEntity{
 	@Column(name = "FIRST_NAME")
 	private String firstName;

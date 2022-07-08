@@ -12,12 +12,10 @@ import javax.persistence.UniqueConstraint;
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @NoArgsConstructor
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(name = "UK_Flight_Reservation" , columnNames = { "flight_id" })})
-@ToString
 public class Reservation extends AbstractEntity {
 
 	@Column(name = "CHECKED_IN")

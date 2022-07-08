@@ -5,15 +5,11 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.ToString;
-
 @Entity
-@ToString
 public class Flight extends AbstractEntity{
 	
 	@Column(name = "FLIGHT_NUMBER")

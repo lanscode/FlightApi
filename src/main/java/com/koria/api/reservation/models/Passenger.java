@@ -6,10 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
-import lombok.ToString;
 
 @Entity
-@ToString(of = {"firstName","lastName","email","phone"})
 public class Passenger extends AbstractEntity {
 	
 	@Column(name = "FIRST_NAME")
