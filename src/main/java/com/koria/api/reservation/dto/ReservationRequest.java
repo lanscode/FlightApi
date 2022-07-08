@@ -1,18 +1,41 @@
 package com.koria.api.reservation.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class ReservationRequest {
-	@Getter @Setter
+
 	private Long flightId;
-	@Getter @Setter
 	private String firstName;
-	@Getter @Setter
 	private String lastName;
-	@Getter @Setter
 	private String email;
-	@Getter @Setter
 	private String phone;
+	public Long getFlightId() {
+		return flightId;
+	}
+	public void setFlightId(Long flightId) {
+		this.flightId = flightId;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 }

@@ -16,11 +16,8 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.koria.api.reservation.models.Reservation;
 
-import lombok.ToString;
-
 @Component
 @Lazy 
-@ToString
 public class PDFGenerator {
 	public void generateItinerary(Reservation reservation, String path) {
 		Document doc = new Document();

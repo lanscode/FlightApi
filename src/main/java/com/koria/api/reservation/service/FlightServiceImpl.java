@@ -19,7 +19,7 @@ public class FlightServiceImpl implements FlightService {
 	}
 	@Override
 	public Flight find(Long id) {
-		return repository.getById(id);
+		return repository.getOne(id);
 	}
 
 }

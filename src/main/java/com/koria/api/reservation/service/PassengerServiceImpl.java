@@ -13,7 +13,6 @@ public class PassengerServiceImpl implements PassengerService {
 	private PassengerRepository repository;
 	@Override
 	public Passenger save(Passenger p) {
-		// TODO Auto-generated method stub
 		return repository.save(p);
 	}
 
