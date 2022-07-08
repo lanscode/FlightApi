@@ -11,9 +11,7 @@ import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(name = "UK_Flight_Reservation" , columnNames = { "flight_id" })})
 public class Reservation extends AbstractEntity {
