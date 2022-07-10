@@ -2,7 +2,6 @@ package com.koria.api.util;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.Date;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;

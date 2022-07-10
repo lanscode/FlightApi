@@ -6,14 +6,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
+public class WebSecurityConfig {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Bean
@@ -22,13 +23,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 	}
 	@Bean(name = BeanIds.AUTHENTICATION_MANAGER)
-	@Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
+	public AuthenticationManager authenticationManagerBean(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+		return authenticationConfiguration.getAuthenticationManager();
 	}
 	
-	@Override
-	public void configure(HttpSecurity httpSecurity) throws Exception {
+	public SecurityFilterChain configure(HttpSecurity httpSecurity) throws Exception {
 		try {
 			httpSecurity.authorizeRequests()
 			.antMatchers("/register*","/login","/auth","/findFlight","/flights","/reservation").permitAll()
@@ -38,5 +37,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			e.printStackTrace();
 			throw e;
 		}
+		return httpSecurity.build();
 	}
 }

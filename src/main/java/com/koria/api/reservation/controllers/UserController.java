@@ -35,7 +35,7 @@ public class UserController {
 	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
 	public String doRegistration(@ModelAttribute("user") User user) {
 		user.setPassword(encoder.encode(user.getPassword()));
-		User savedUser  = service.save(user);
+		service.save(user);
 		return "user/login";
 	}
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -47,7 +47,7 @@ public class UserController {
 	public String doLogin(@ModelAttribute("loginRequest") LoginRequest loginRequest,ModelMap modelMap) {
 		LOGGER.warn("Trying to log into system");
         try {
-        	User user = service.findByEmail(loginRequest.getEmail());
+        	//User user = service.findByEmail(loginRequest.getEmail());
     		//String cryptedPassword = encoder.encode(loginRequest.getPassword());		
     		boolean loginResponse = securityService.login(loginRequest.getEmail(), loginRequest.getPassword());
     		

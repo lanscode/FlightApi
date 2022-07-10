@@ -28,7 +28,7 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public Student find(Long id) {
 		// TODO Auto-generated method stub
-		return repository.getById(id);
+		return repository.getReferenceById(id);
 	}
 
 	@Override
